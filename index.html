@@ -1,80 +1,527 @@
-<section class="contact" id="contact">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BELLESTAR® commercial real estate brokerage and commercial real estate management services.">
+  <meta name="theme-color" content="#0b1f3a">
+  <title>BELLESTAR® | Commercial Real Estate Brokerage &amp; Management</title>
 
-<h2>Contact Bellestar</h2>
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-2: #12365f;
+      --gold: #d1aa4d;
+      --gold-dark: #aa8430;
+      --paper: #f7f5ef;
+      --white: #ffffff;
+      --ink: #172033;
+      --muted: #657083;
+      --line: rgba(11, 31, 58, 0.12);
+      --shadow: 0 22px 60px rgba(11, 31, 58, 0.14);
+      --radius: 20px;
+    }
 
-<div class="contact-container">
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
 
-<div class="contact-info">
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
 
-<h3>Bellestar Investments Corp.</h3>
+    .site-header {
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: var(--white);
+    }
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+    .brand {
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: .92rem;
+      font-weight: 650;
+      opacity: .9;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: #f2d488; opacity: 1; }
 
-<p>
-2201 NW 30th Place, Suite A<br>
-Pompano Beach, Florida 33069
-</p>
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 78% 24%, rgba(209,170,77,.24), transparent 26%),
+        linear-gradient(120deg, #071427 0%, #0b2445 52%, #184e78 100%);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -5% 0 38%;
+      height: 76%;
+      opacity: .33;
+      background:
+        linear-gradient(90deg, transparent 0 4%, rgba(255,255,255,.18) 4% 5%, transparent 5% 12%, rgba(255,255,255,.12) 12% 13%, transparent 13%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.13) 0 2px, transparent 2px 44px),
+        linear-gradient(115deg, transparent 0 18%, rgba(255,255,255,.14) 18% 19%, transparent 19% 38%, rgba(255,255,255,.08) 38% 39%, transparent 39%);
+      clip-path: polygon(11% 18%, 42% 0, 56% 15%, 75% 5%, 100% 21%, 100% 100%, 0 100%, 0 35%);
+      border-left: 1px solid rgba(255,255,255,.26);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5,16,32,.58), transparent 64%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      padding: 150px 0 100px;
+    }
+    .hero .eyebrow { color: #f2d488; }
+    .hero h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.6rem, 9vw, 7rem);
+      font-weight: 600;
+      line-height: .95;
+      letter-spacing: .055em;
+    }
+    .hero h2 {
+      max-width: 740px;
+      margin: 24px 0 20px;
+      font-size: clamp(1.5rem, 3.2vw, 2.45rem);
+      font-weight: 450;
+      line-height: 1.2;
+    }
+    .hero p {
+      max-width: 660px;
+      margin: 0 0 34px;
+      color: rgba(255,255,255,.82);
+      font-size: 1.08rem;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--gold); color: #101826; }
+    .button-primary:hover { background: #e1bd68; }
+    .button-secondary { border-color: rgba(255,255,255,.55); color: var(--white); }
+    .button-secondary:hover { background: rgba(255,255,255,.1); }
 
-<p>
-(561) 994-5954
-</p>
+    .intro { padding: 95px 0 42px; }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .intro h2, .about h2, .contact-copy h2 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.08;
+    }
+    .intro-copy { font-size: 1.08rem; color: var(--muted); }
+    .intro-copy p:first-child { margin-top: 0; }
 
-<p>
-Commercial Real Estate Brokerage & Management
-</p>
+    .services { padding: 42px 0 100px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      min-height: 310px;
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 12px 34px rgba(11,31,58,.07);
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -70px;
+      width: 190px;
+      height: 190px;
+      border: 28px solid rgba(209,170,77,.13);
+      border-radius: 50%;
+    }
+    .number {
+      display: inline-grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(209,170,77,.16);
+      color: var(--gold-dark);
+      font-weight: 850;
+    }
+    .card h3 {
+      margin: 42px 0 14px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.7rem;
+    }
+    .card p { position: relative; z-index: 1; color: var(--muted); }
 
-</div>
+    .about {
+      padding: 100px 0;
+      color: var(--white);
+      background: var(--navy);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .about h2 { color: var(--white); }
+    .about p { color: rgba(255,255,255,.76); font-size: 1.08rem; }
+    .about-panel {
+      padding: 42px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+    }
+    .about-panel strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #f2d488;
+      font-size: .8rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
 
-<div class="contact-form">
+    .contact { padding: 100px 0; background: var(--white); }
+    .contact-shell {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+    .contact-copy {
+      padding: 52px;
+      background: var(--paper);
+    }
+    .contact-copy p { color: var(--muted); }
+    .contact-details { margin-top: 34px; }
+    .detail { padding: 16px 0; border-top: 1px solid var(--line); }
+    .detail span {
+      display: block;
+      color: var(--gold-dark);
+      font-size: .75rem;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .detail a { color: var(--navy); font-weight: 750; text-decoration: none; }
 
-<form>
+    .contact-form { padding: 52px; background: var(--white); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field-full { grid-column: 1 / -1; }
+    label { color: var(--navy); font-size: .88rem; font-weight: 750; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #d8dee7;
+      border-radius: 10px;
+      background: #fbfcfd;
+      padding: 13px 14px;
+      color: var(--ink);
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 3px solid rgba(209,170,77,.24);
+      border-color: var(--gold-dark);
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    .submit-button {
+      min-height: 52px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 13px 24px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+    .submit-button:hover { background: var(--navy-2); }
+    .form-note { margin: 14px 0 0; color: var(--muted); font-size: .82rem; }
 
-<input type="text"
-placeholder="Name"
-required>
+    footer { padding: 34px 0; color: rgba(255,255,255,.72); background: #071427; }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      font-size: .86rem;
+    }
+    .footer-brand { color: var(--white); font-family: Georgia, "Times New Roman", serif; letter-spacing: .13em; }
 
-<input type="email"
-placeholder="Email Address"
-required>
+    @media (max-width: 800px) {
+      .nav-links a:not(.nav-contact) { display: none; }
+      .hero { min-height: 690px; }
+      .intro-grid, .cards, .about-grid, .contact-shell { grid-template-columns: 1fr; }
+      .intro-grid, .about-grid { gap: 34px; }
+      .contact-copy, .contact-form { padding: 34px 26px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
 
-<input type="tel"
-placeholder="Phone Number">
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
 
-<select>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Bellestar home">BELLESTAR®</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<option>
-Service Needed
-</option>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Bellestar Investments Corp.</p>
+          <h1 id="hero-title">BELLESTAR®</h1>
+          <h2>Commercial Real Estate Brokerage &amp; Management</h2>
+          <p>
+            Professional commercial real estate services for property owners,
+            investors, and businesses, with a focus on attentive service and
+            long-term asset performance.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="#contact">Request information</a>
+            <a class="button button-secondary" href="#services">Explore services</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<option>
-Commercial Brokerage
-</option>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">Our focus</p>
+          <h2 id="intro-title">Commercial real estate with a clear point of view.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            BELLESTAR® commercial real estate services support clients seeking
+            thoughtful brokerage guidance and dependable property management.
+          </p>
+          <p>
+            Every engagement begins with a practical understanding of the property,
+            the business objective, and the desired long-term outcome.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<option>
-Property Management
-</option>
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <p class="eyebrow">Services</p>
+        <h2 class="section-title" id="services-title" style="position:absolute;left:-9999px;">Our services</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Commercial Real Estate Brokerage</h3>
+            <p>
+              Brokerage services for commercial property owners, investors, and
+              businesses pursuing real estate opportunities and informed transaction decisions.
+            </p>
+          </article>
+          <article class="card">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>Commercial Real Estate Management</h3>
+            <p>
+              Property management services centered on responsive oversight,
+              operational continuity, and the long-term performance of commercial assets.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<option>
-Asset Management
-</option>
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About Bellestar</p>
+          <h2 id="about-title">Professional service. Enduring perspective.</h2>
+          <p>
+            BELLESTAR® is a registered service mark of Bellestar Investments Corp.
+            for commercial real estate brokerage and commercial real estate management services.
+          </p>
+        </div>
+        <div class="about-panel">
+          <strong>Our approach</strong>
+          <p>
+            We value clear communication, careful attention to each property, and
+            practical real estate solutions aligned with our clients’ objectives.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<option>
-Other
-</option>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-shell">
+          <div class="contact-copy">
+            <p class="eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Contact Bellestar</h2>
+            <p>
+              Tell us about your commercial property or the services you are seeking.
+            </p>
+            <div class="contact-details">
+              <div class="detail">
+                <span>Company</span>
+                Bellestar Investments Corp.
+              </div>
+              <div class="detail">
+                <span>Office</span>
+                2201 NW 30th Place, Suite A<br>
+                Pompano Beach, Florida 33069
+              </div>
+              <div class="detail">
+                <span>Telephone</span>
+                <a href="tel:+15619945954">(561) 994-5954</a>
+              </div>
+            </div>
+          </div>
 
-</select>
+          <div class="contact-form">
+            <form id="inquiry-form">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="reply-email">Email address</label>
+                  <input id="reply-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone number</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel">
+                </div>
+                <div class="field">
+                  <label for="service">Service needed</label>
+                  <select id="service" name="service" required>
+                    <option value="">Please select</option>
+                    <option>Commercial real estate brokerage</option>
+                    <option>Commercial real estate management</option>
+                    <option>General inquiry</option>
+                  </select>
+                </div>
+                <div class="field field-full">
+                  <label for="message">Property or inquiry details</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="field field-full">
+                  <button class="submit-button" type="submit">Request information</button>
+                  <p class="form-note">
+                    Selecting “Request information” opens your email application with your inquiry prepared for review before sending.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<textarea
-rows="6"
-placeholder="Tell us about your property or project">
-</textarea>
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">BELLESTAR®</div>
+      <div>Commercial Real Estate Brokerage &amp; Management</div>
+      <div>© 2026 Bellestar Investments Corp. All rights reserved.</div>
+    </div>
+  </footer>
 
-<button type="submit">
-Request Information
-</button>
+  <script>
+    document.getElementById('inquiry-form').addEventListener('submit', function (event) {
+      event.preventDefault();
 
-</form>
+      const name = document.getElementById('name').value.trim();
+      const replyEmail = document.getElementById('reply-email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
 
-</div>
+      const subject = encodeURIComponent('Bellestar website inquiry — ' + service);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + replyEmail + '\n' +
+        'Phone: ' + (phone || 'Not provided') + '\n' +
+        'Service: ' + service + '\n\n' +
+        'Inquiry details:\n' + message
+      );
 
-</div>
-
-</section>
+      const inboxParts = ['silvia.gutti', 'bellestar.com'];
+      window.location.href = 'mailto:' + inboxParts[0] + '@' + inboxParts[1] + '?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
