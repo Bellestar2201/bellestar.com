@@ -1,70 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>BELLESTAR®</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BELLESTAR® | Commercial Real Estate Brokerage & Management</title>
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-font-family:Arial,sans-serif;
-max-width:900px;
-margin:40px auto;
-padding:20px;
+font-family: "Segoe UI", Arial, sans-serif;
 line-height:1.6;
 color:#333;
+background:#f4f6f9;
 }
-h1{
-font-size:48px;
+
+.hero{
+background:linear-gradient(rgba(15,39,71,.80),
+rgba(15,39,71,.80)),
+url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:4rem;
+letter-spacing:3px;
+margin-bottom:15px;
+}
+
+.hero h2{
+font-size:2rem;
+font-weight:300;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+background:#c9a227;
+color:#fff;
+padding:14px 28px;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+background:#b08e1d;
+}
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:2.2rem;
+color:#0f2747;
+margin-bottom:50px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#0f2747;
+}
+
+.about{
+background:white;
+}
+
+.about-content{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:1.1rem;
+}
+
+.contact{
+background:#0f2747;
+color:white;
+text-align:center;
+}
+
+.contact h2{
+margin-bottom:20px;
+}
+
+.contact p{
 margin-bottom:10px;
 }
-h2{
-color:#666;
-font-weight:normal;
+
+.footer{
+background:#071728;
+color:white;
+padding:30px;
+text-align:center;
 }
-.contact{
-margin-top:40px;
-padding-top:20px;
-border-top:1px solid #ddd;
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
 }
+
+.hero h2{
+font-size:1.4rem;
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
+
+<section class="hero">
+
+<div class="hero-content">
 
 <h1>BELLESTAR®</h1>
 
 <h2>Commercial Real Estate Brokerage & Management</h2>
 
 <p>
-BELLESTAR® provides commercial real estate brokerage and commercial real estate management services for property owners, investors, and businesses.
+Professional real estate services focused on helping owners,
+investors, and businesses maximize the value and performance
+of commercial real estate assets.
 </p>
 
-<h3>Services</h3>
+#contact
+Contact Bellestar
+</a>
 
-<ul>
-<li>Commercial Real Estate Brokerage</li>
-<li>Commercial Real Estate Management</li>
-<li>Asset Management Support</li>
-<li>Property Oversight</li>
-<li>Leasing Coordination</li>
-</ul>
+</div>
 
-<div class="contact">
+</section>
 
-<h3>Contact</h3>
+<section>
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Commercial Brokerage</h3>
+<p>
+Representation and advisory services for acquisitions,
+dispositions, leasing opportunities, and commercial real estate
+transactions.
+</p>
+</div>
+
+<div class="card">
+<h3>Property Management</h3>
+<p>
+Professional oversight and management support designed
+to maintain performance and protect long-term property value.
+</p>
+</div>
+
+<div class="card">
+<h3>Asset Management</h3>
+<p>
+Strategic review and operational support for investors
+seeking to maximize commercial real estate performance.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<div class="about-content">
+
+<h2 class="section-title">About Bellestar</h2>
 
 <p>
-Bellestar Investments Corp.<br>
-2201 NW 30th Place, Suite A<br>
-Pompano Beach, Florida 33069<br><br>
+BELLESTAR® is the service mark used by Bellestar Investments Corp.
+for commercial real estate brokerage and commercial real estate
+management services.
+</p>
 
-Phone: (561) 994-5954<br>
-Email: silvia.gutti@bellestar.com
+<br>
+
+<p>
+Bellestar focuses on commercial property management,
+brokerage support, real estate operations, and investment-oriented
+real estate services.
 </p>
 
 </div>
 
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Bellestar</h2>
+
+<p>
+Bellestar Investments Corp.
+</p>
+
+<p>
+2201 NW 30th Place, Suite A<br>
+Pompano Beach, Florida 33069
+</p>
+
+<p>
+(561) 994-5954
+</p>
+
+<p>
+silvia.gutti@bellestar.com
+</p>
+
+</section>
+
+<footer class="footer">
+
+<p>
+BELLESTAR®
+</p>
+
+<p>
+Commercial Real Estate Brokerage & Management
+</p>
+
 <p>
 © 2026 Bellestar Investments Corp.
 </p>
+
+</footer>
 
 </body>
 </html>
